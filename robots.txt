@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+User-agent: *
+Allow: /
+
+Sitemap: ENDERECO-DO-SITE/sitemap.xml
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Role Dado | Dado Virtual Online</title>
+
+<title>Role Dado | Dado Virtual Online Grátis</title>
+
+<meta name="description"
+content="Role dados virtuais online de forma rápida e gratuita. Jogue com amigos e família no Role Dado.">
+
+
+<link rel="icon" type="image/png" sizes="512x512" href="Imagens/icone-role-dado.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at top, #26345c, #101522 60%);
+
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 0;
+}
+
+.painel {
+    width: 90%;
+    max-width: 600px;
+
+    background: rgba(255,255,255,0.08);
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.4);
+}
+
+h1 {
+    font-size: 42px;
+    margin: 0 0 5px;
+}
+
+.subtitulo {
+    color: #b9c0d0;
+    margin-bottom: 35px;
+}
+
+
+/* OPÇÕES */
+
+.opcoes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.opcao {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+label {
+    font-size: 14px;
+    color: #b9c0d0;
+    margin-bottom: 7px;
+}
+
+select {
+    width: 150px;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    background: white;
+    color: #111827;
+
+    cursor: pointer;
+}
+
+
+/* ÁREA DOS DADOS */
+
+#areaDado {
+    width: 100%;
+    min-height: 150px;
+
+    margin: 20px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    overflow: hidden;
+}
+
+
+/* DADO BRANCO */
+
+.dado-visual {
+    position: relative;
+
+    width: 76px;
+    height: 76px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #e5e7eb
+        );
+
+    border-radius: 16px;
+
+    border: 1px solid #d1d5db;
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,0.40),
+        inset 3px 3px 7px rgba(255,255,255,0.9),
+        inset -3px -3px 7px rgba(0,0,0,0.12);
+
+    flex-shrink: 0;
+}
+
+
+/* BOLINHAS */
+
+.ponto {
+    position: absolute;
+
+    width: 13px;
+    height: 13px;
+
+    background: #111;
+
+    border-radius: 50%;
+
+    box-shadow:
+        inset 2px 2px 3px rgba(255,255,255,0.2);
+}
+
+
+/* POSIÇÕES */
+
+.top-left {
+    top: 13px;
+    left: 13px;
+}
+
+.top-right {
+    top: 13px;
+    right: 13px;
+}
+
+.middle-left {
+    top: 50%;
+    left: 13px;
+
+    transform: translateY(-50%);
+}
+
+.center {
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.middle-right {
+    top: 50%;
+    right: 13px;
+
+    transform: translateY(-50%);
+}
+
+.bottom-left {
+    bottom: 13px;
+    left: 13px;
+}
+
+.bottom-right {
+    bottom: 13px;
+    right: 13px;
+}
+
+
+/* NÚMERO 1 VERMELHO */
+
+.ponto.vermelho {
+    background: #e32636;
+
+    box-shadow:
+        0 0 8px rgba(227,38,54,0.45);
+}
+
+
+/* MUITOS DADOS */
+
+#areaDado.muitos .dado-visual {
+    width: 58px;
+    height: 58px;
+
+    border-radius: 13px;
+}
+
+#areaDado.muitos .ponto {
+    width: 10px;
+    height: 10px;
+}
+
+#areaDado.muitos .top-left {
+    top: 10px;
+    left: 10px;
+}
+
+#areaDado.muitos .top-right {
+    top: 10px;
+    right: 10px;
+}
+
+#areaDado.muitos .middle-left {
+    left: 10px;
+}
+
+#areaDado.muitos .middle-right {
+    right: 10px;
+}
+
+#areaDado.muitos .bottom-left {
+    bottom: 10px;
+    left: 10px;
+}
+
+#areaDado.muitos .bottom-right {
+    bottom: 10px;
+    right: 10px;
+}
+
+
+/* OUTROS DADOS */
+
+.numero-dado {
+    min-width: 70px;
+    height: 70px;
+
+    padding: 10px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #e5e7eb
+        );
+
+    color: #111827;
+
+    border-radius: 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 26px;
+    font-weight: bold;
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,0.35);
+}
+
+
+/* BOTÃO */
+
+.botao-jogar {
+    background:
+        linear-gradient(
+            135deg,
+            #2196f3,
+            #1675e0
+        );
+
+    color: white;
+
+    border: none;
+
+    padding: 16px 38px;
+
+    border-radius: 14px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    box-shadow:
+        0 8px 20px rgba(33,150,243,0.30);
+}
+
+.botao-jogar:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(33,150,243,0.45);
+}
+
+.botao-jogar:active {
+    transform: scale(0.96);
+}
+
+
+/* RESULTADOS */
+
+.resultados {
+    margin-top: 30px;
+
+    background: rgba(0,0,0,0.20);
+
+    padding: 15px;
+
+    border-radius: 15px;
+}
+
+#resultado {
+    color: #cbd5e1;
+}
+
+#total {
+    font-size: 28px;
+    font-weight: bold;
+
+    margin-bottom: 5px;
+}
+
+
+/* HISTÓRICO */
+
+.historico {
+    margin-top: 25px;
+
+    background: rgba(0,0,0,0.20);
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    text-align: left;
+}
+
+.historico h2 {
+    text-align: center;
+    margin-top: 0;
+}
+
+#listaHistorico {
+    margin-top: 15px;
+}
+
+#listaHistorico p {
+    background: rgba(255,255,255,0.08);
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    margin: 8px 0;
+}
+
+.vazio {
+    color: #b9c0d0;
+    text-align: center;
+}
+
+
+/* LIMPAR HISTÓRICO */
+
+.botao-limpar {
+    display: block;
+
+    margin: 20px auto 0;
+
+    padding: 10px 18px;
+
+    font-size: 14px;
+
+    background: rgba(255,255,255,0.10);
+
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.20);
+
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+
+/* ANIMAÇÃO */
+
+.rolando {
+    animation: rolarDado 0.85s ease-out;
+}
+
+@keyframes rolarDado {
+
+    0% {
+        transform:
+            translateX(-30px)
+            translateY(0)
+            rotate(-90deg)
+            scale(0.75);
+    }
+
+    20% {
+        transform:
+            translateX(-15px)
+            translateY(-25px)
+            rotate(0deg)
+            scale(0.85);
+    }
+
+    40% {
+        transform:
+            translateX(15px)
+            translateY(0)
+            rotate(100deg)
+            scale(0.80);
+    }
+
+    60% {
+        transform:
+            translateX(25px)
+            translateY(-18px)
+            rotate(190deg)
+            scale(0.88);
+    }
+
+    80% {
+        transform:
+            translateX(10px)
+            translateY(0)
+            rotate(280deg)
+            scale(0.92);
+    }
+
+    100% {
+        transform:
+            translateX(0)
+            translateY(0)
+            rotate(360deg)
+            scale(1);
+    }
+}
+
+
+/* CELULAR */
+
+@media (max-width: 500px) {
+
+    .painel {
+        padding: 24px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    select {
+        width: 130px;
+    }
+
+    .dado-visual {
+        width: 62px;
+        height: 62px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<main class="painel">
+
+    <h1>
+        🎲 Dado Virtual
+    </h1>
+
+    <p class="subtitulo">
+        Role seus dados de forma rápida e gratuita.
+    </p>
+
+
+    <div class="opcoes">
+
+        <div class="opcao">
+
+            <label>
+                Quantidade
+            </label>
+
+            <select id="quantidade">
+
+                <option value="1">1 dado</option>
+                <option value="2">2 dados</option>
+                <option value="3">3 dados</option>
+                <option value="4">4 dados</option>
+                <option value="5">5 dados</option>
+                <option value="6">6 dados</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="opcao">
+
+            <label>
+                Tipo do dado
+            </label>
+
+            <select id="tipo">
+
+                <option value="4">D4</option>
+
+                <option value="6" selected>
+                    D6
+                </option>
+
+                <option value="8">D8</option>
+                <option value="10">D10</option>
+                <option value="12">D12</option>
+                <option value="20">D20</option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+
+    <div id="areaDado"></div>
+
+
+    <button
+        class="botao-jogar"
+        onclick="jogarDado()"
+    >
+        🎲 Jogar dados
+    </button>
+
+
+    <div class="resultados">
+
+        <p id="resultado">
+            Resultado: 1
+        </p>
+
+        <p id="total">
+            Total: 1
+        </p>
+
+    </div>
+
+
+    <div class="historico">
+
+        <h2>
+            📜 Histórico
+        </h2>
+
+        <div id="listaHistorico">
+
+            <p class="vazio">
+                Nenhuma jogada ainda.
+            </p>
+
+        </div>
+
+
+        <button
+            class="botao-limpar"
+            onclick="limparHistorico()"
+        >
+            🗑️ Limpar histórico
+        </button>
+
+    </div>
+
+</main>
+
+
+<script>
+
+
+/* =========================
+   CRIAR DADO D6
+========================= */
+
+function criarDado(numero) {
+
+    const dado =
+        document.createElement("div");
+
+    dado.className =
+        "dado-visual";
+
+
+    let pontos = [];
+
+
+    if (numero === 1) {
+
+        pontos = [
+            ["center", true]
+        ];
+
+    }
+
+
+    if (numero === 2) {
+
+        pontos = [
+            ["top-left", false],
+            ["bottom-right", false]
+        ];
+
+    }
+
+
+    if (numero === 3) {
+
+        pontos = [
+            ["top-left", false],
+            ["center", false],
+            ["bottom-right", false]
+        ];
+
+    }
+
+
+    if (numero === 4) {
+
+        pontos = [
+            ["top-left", false],
+            ["top-right", false],
+            ["bottom-left", false],
+            ["bottom-right", false]
+        ];
+
+    }
+
+
+    if (numero === 5) {
+
+        pontos = [
+            ["top-left", false],
+            ["top-right", false],
+            ["center", false],
+            ["bottom-left", false],
+            ["bottom-right", false]
+        ];
+
+    }
+
+
+    if (numero === 6) {
+
+        pontos = [
+            ["top-left", false],
+            ["top-right", false],
+            ["middle-left", false],
+            ["middle-right", false],
+            ["bottom-left", false],
+            ["bottom-right", false]
+        ];
+
+    }
+
+
+    for (let pontoInfo of pontos) {
+
+        const ponto =
+            document.createElement("span");
+
+
+        ponto.className =
+            "ponto " + pontoInfo[0];
+
+
+        if (pontoInfo[1] === true) {
+
+            ponto.classList.add(
+                "vermelho"
+            );
+
+        }
+
+
+        dado.appendChild(
+            ponto
+        );
+
+    }
+
+
+    return dado;
+
+}
+
+
+
+/* =========================
+   MOSTRAR DADOS
+========================= */
+
+function mostrarDados(
+    resultados,
+    tipo
+) {
+
+    const area =
+        document.getElementById(
+            "areaDado"
+        );
+
+
+    area.innerHTML = "";
+
+
+    if (resultados.length >= 4) {
+
+        area.classList.add(
+            "muitos"
+        );
+
+    }
+
+    else {
+
+        area.classList.remove(
+            "muitos"
+        );
+
+    }
+
+
+    for (let numero of resultados) {
+
+
+        if (tipo === 6) {
+
+            const dado =
+                criarDado(numero);
+
+
+            area.appendChild(
+                dado
+            );
+
+        }
+
+
+        else {
+
+            const dado =
+                document.createElement(
+                    "div"
+                );
+
+
+            dado.className =
+                "numero-dado";
+
+
+            dado.textContent =
+                numero;
+
+
+            area.appendChild(
+                dado
+            );
+
+        }
+
+    }
+
+}
+
+/* =========================
+   SOM
+========================= */
+
+const somDado = new Audio("Audio/Dado-Som.mp3");
+
+function tocarSomDado() {
+
+    somDado.currentTime = 0;
+
+    somDado.play().catch(function(erro) {
+        console.log("Erro ao tocar o som:", erro);
+    });
+
+}
+
+/* =========================
+   JOGAR
+========================= */
+
+function jogarDado() {
+
+    tocarSomDado();
+
+
+    const quantidade =
+        Number(
+            document.getElementById(
+                "quantidade"
+            ).value
+        );
+
+
+    const tipo =
+        Number(
+            document.getElementById(
+                "tipo"
+            ).value
+        );
+
+
+    const area =
+        document.getElementById(
+            "areaDado"
+        );
+
+
+    /* ANIMAÇÃO */
+
+    const animacao =
+        setInterval(function() {
+
+
+            let temporarios = [];
+
+
+            for (
+                let i = 0;
+                i < quantidade;
+                i++
+            ) {
+
+
+                temporarios.push(
+
+                    Math.floor(
+                        Math.random() *
+                        tipo
+                    ) + 1
+
+                );
+
+            }
+
+
+            mostrarDados(
+                temporarios,
+                tipo
+            );
+
+
+
+            const dados =
+                area.children;
+
+
+            for (
+                let dado of dados
+            ) {
+
+
+                dado.classList.add(
+                    "rolando"
+                );
+
+            }
+
+
+        }, 100);
+
+
+
+    /* RESULTADO FINAL */
+
+    setTimeout(function() {
+
+
+        clearInterval(
+            animacao
+        );
+
+
+        let resultados = [];
+
+        let total = 0;
+
+
+        for (
+            let i = 0;
+            i < quantidade;
+            i++
+        ) {
+
+
+            const numero =
+
+                Math.floor(
+                    Math.random() *
+                    tipo
+                ) + 1;
+
+
+            resultados.push(
+                numero
+            );
+
+
+            total +=
+                numero;
+
+        }
+
+
+
+        mostrarDados(
+            resultados,
+            tipo
+        );
+
+
+
+        document.getElementById(
+            "resultado"
+        ).textContent =
+
+            "Resultados: " +
+            resultados.join(", ");
+
+
+
+        document.getElementById(
+            "total"
+        ).textContent =
+
+            "Total: " +
+            total;
+
+
+
+        adicionarHistorico(
+            tipo,
+            quantidade,
+            resultados,
+            total
+        );
+
+
+    }, 900);
+
+}
+
+
+
+/* =========================
+   HISTÓRICO
+========================= */
+
+function adicionarHistorico(
+    tipo,
+    quantidade,
+    resultados,
+    total
+) {
+
+
+    const lista =
+        document.getElementById(
+            "listaHistorico"
+        );
+
+
+    const vazio =
+        lista.querySelector(
+            ".vazio"
+        );
+
+
+    if (vazio) {
+
+        vazio.remove();
+
+    }
+
+
+
+    const jogada =
+        document.createElement(
+            "p"
+        );
+
+
+    jogada.textContent =
+
+        "D" + tipo +
+
+        " × " + quantidade +
+
+        " → " +
+
+        resultados.join(", ") +
+
+        " | Total: " +
+
+        total;
+
+
+
+    lista.prepend(
+        jogada
+    );
+
+
+
+    /* MÁXIMO 10 JOGADAS */
+
+    while (
+        lista.children.length > 10
+    ) {
+
+
+        lista.removeChild(
+            lista.lastElementChild
+        );
+
+    }
+
+}
+
+
+
+/* =========================
+   LIMPAR HISTÓRICO
+========================= */
+
+function limparHistorico() {
+
+
+    const lista =
+        document.getElementById(
+            "listaHistorico"
+        );
+
+
+    lista.innerHTML =
+
+        '<p class="vazio">' +
+        'Nenhuma jogada ainda.' +
+        '</p>';
+
+}
+
+
+
+/* DADO INICIAL */
+
+mostrarDados(
+    [1],
+    6
+);
+
+
+</script>
+
+</body>
+
+</html>
