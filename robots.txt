@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+Allow: /
+
+Sitemap: https://eduardosorianiribeiroo-create.github.io/role-dado/sitemap.xml
 <html lang="pt-BR">
 User-agent: *
 Allow: /
